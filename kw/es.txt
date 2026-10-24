@@ -1,0 +1,52 @@
+software de cotizaciones para transitarios
+software de cotización para agentes de carga
+cotizador para pequeños transitarios
+sistema de gestión de cotizaciones de fletes
+automatización de cotizaciones de fletes
+inteligencia artificial para cotizar fletes
+gestión de solicitudes de cotización de fletes
+cotizaciones de fletes desde correos
+automatizar cotizaciones de fletes por correo
+extraer datos de carga de correos
+extraer datos de adjuntos para cotizar fletes
+lectura automática de listas de empaque
+bandeja compartida cotizaciones de fletes
+automatizar respuestas a cotizaciones de fletes
+generador de correos de cotización de fletes
+generar cotizaciones de fletes en PDF
+cotizar fletes desde Outlook
+software de gestión de tarifas para transitarios
+gestor de tarifas de fletes
+base de datos de tarifas de fletes
+gestión de tarifas aéreas para agentes de carga
+gestión de tarifas marítimas para transitarios
+extraer tarifas de fletes de correos
+importar tarifas de fletes desde PDF
+importar tarifas de fletes desde Excel
+centralizar tarifarios de fletes
+comparar tarifas de agentes de carga
+software para comparar tarifas de navieras
+gestión de tarifas de compra y venta de fletes
+gestión de tarifas de contrato de fletes
+gestión de tarifas spot de fletes
+control de vigencia de tarifas de fletes
+gestión de recargos de fletes
+cálculo de margen en cotizaciones de fletes
+tarifas por cliente para transitarios
+crear cotizaciones desde tarifarios de fletes
+software cotización flete aéreo
+software cotización flete marítimo
+cotizador FCL para transitarios
+cotizador LCL para agentes de carga
+aprobación de cotizaciones de fletes
+plantilla de cotización de fletes
+plantilla correo cotización de fletes
+control de versiones de cotizaciones de fletes
+historial de cotizaciones de fletes
+seguimiento automático de cotizaciones de fletes
+recordatorios de cotizaciones de fletes
+seguimiento de respuestas a cotizaciones de fletes
+control de cotizaciones de fletes aceptadas
+estado de cotizaciones para agentes de carga
+automatizar solicitudes de tarifas a agentes
+extraer tarifas de respuestas de agentes

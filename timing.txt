@@ -1,0 +1,10 @@
+start 2026-10-24 18:37:52 CST
+slug freight-quote-pipeline
+name 小货代询价邮件报价流水线
+kw expand attempt 1 2026-10-24 18:37:52 CST
+kw expand done 2026-10-24 18:46:30 CST
+serp start 2026-10-24 18:46:30 CST
+serp done ec=0 2026-10-24 19:28:01 CST
+report start 2026-10-24 19:28:01 CST
+report end 2026-10-24 19:47:33 CST 用时 19 分钟
+done freight-quote-pipeline 2026-10-24 19:47:33 CST

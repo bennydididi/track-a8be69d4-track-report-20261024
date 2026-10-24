@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小货代询价邮件报价流水线-56分 · 完整证据包</title><style>body{margin:0;font-family:-apple-system,"PingFang SC","Noto Sans SC",sans-serif;background:#0f1419;color:#e7ecf3;line-height:1.65}
+.top{position:sticky;top:0;background:#0f1419ee;border-bottom:1px solid #2a3548;padding:8px 16px}.top a{color:#9aa8bc;margin-right:10px;font-size:13px;text-decoration:none}
+.wrap{max-width:980px;margin:0 auto;padding:20px}a{color:#5b9fd4}table{border-collapse:collapse;display:block;overflow-x:auto}td,th{border:1px solid #2a3548;padding:4px 8px}
+pre,code{background:#121a26;white-space:pre-wrap}h2.sec{border-top:2px solid #5b9fd4;padding-top:16px;margin-top:40px}</style></head><body><div class="top"><a href="#report">完整报告</a><a href="#sop-criteria">sop-criteria.md</a><a href="#sop-v3">sop-v3.md</a><a href="#files">证据文件</a></div><div class="wrap"><section id="report"><h2 class="sec">完整报告</h2><p>这个产品帮助小型国际货代的报价员，在客户通过邮件询问海空运价格的场景下，解决反复录入、查费率和核对费用后才能发出报价的问题。</p>
+<h1 id="_1">小货代询价邮件报价流水线</h1>
+<p>研究日：2026-10-24。<strong>建议：保留需求，先做付费试点；当前不建议直接立项，也不优先靠 SEO 铺站。</strong></p>
+<h2 id="_2">一分钟判断</h2>
+<h3 id="_3">钉死的研究对象</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>本次固定口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>谁使用／谁付钱</td>
+<td>发达市场的小型国际海空运货代报价员使用，公司负责人付费；货代是帮客户安排运输的中间商</td>
+</tr>
+<tr>
+<td>输入</td>
+<td>客户询价邮件和附件＋客户有权提供的有效买价表／代理回价＋公司加价规则及报价条款</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>人工确认后可发给客户的报价草稿：费用明细、来源、有效期、包含／排除项；信息不足则生成补问草稿，并保留记录</td>
+</tr>
+<tr>
+<td><strong>只判一个任务</strong></td>
+<td><strong>把一封询价处理成可审核的客户报价，减少重复录入和核对时间</strong></td>
+</tr>
+<tr>
+<td>最小试点</td>
+<td>单港口对、整柜普货、自有有效 Excel 费率；先生成邮件正文报价，由报价员确认发送</td>
+</tr>
+<tr>
+<td>远程成交边界</td>
+<td>卖报价软件订阅；通过在线演示和文件导入交付。运输、订舱、报关由客户自己安排</td>
+</tr>
+</tbody>
+</table>
+<p>这是研究定位，尚未做客户访谈或产品实测。流程可与<a href="https://freitt.com/how-it-works">Freitt 的公开说明</a>对照。</p>
+<h3 id="_4">首屏三维决策</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>判断</th>
+<th>最关键依据／限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>有没有相关需求</strong></td>
+<td><strong>有相关需求；样本有限，推广污染已降权</strong></td>
+<td>从业者明确描述邮件、查费率、审批、报价的连续流程；也有人认为可靠承诺比抢快更有用。半年全量未取得。<a href="https://www.reddit.com/r/freightforwarding/comments/1wcl4n3/how_long_does_an_ocean_quote_actually_take_your/">用户原声</a></td>
+</tr>
+<tr>
+<td><strong>当前切口能否独立收费</strong></td>
+<td><strong>待验证；同任务公开标价已找到，独立付费/续费 PMF 未找到</strong></td>
+<td>Freitt 提供“邮件＋自有费率→审核草稿”，Starter <strong>$55／用户／月</strong>；真实付费客户数、续费率未找到。标价、套件评价不能直接证明该切口已达到产品市场匹配（PMF）。<a href="https://freitt.com/pricing">价格</a></td>
+</tr>
+<tr>
+<td><strong>是否优先靠 SEO</strong></td>
+<td><strong>暂不优先；未取得主任务可靠正搜索量，非英语指定国家 Google 前十未完成</strong></td>
+<td>正数全部来自相邻运价管理词；原标零值存在缺失值转零风险。年轻域名不能弥补搜索量和买家未知。<a href="https://api.pxany.com/v1/keyword-volumes">供应商</a>、<a href="https://www.google.com/search?q=freight+email+quote+workflow&amp;gl=us&amp;hl=en&amp;num=10">核心词复查</a>；审计见附件</td>
+</tr>
+</tbody>
+</table>
+<p><strong>会改变决定的未知：</strong>匹配公司的负责人，是否会为这个独立流程付款并续费；自然搜索能否带来这类公司，而非寻找运输报价的货主。下一步做真实样本付费试点，同时只留少量产品页观察搜索获客。首付、复用、续费分开验，具体停止条件见下文。</p>
+<h2 id="_5">判断依据</h2>
+<h3 id="_6">需求存在，但等待海外代理的时间不能全算成软件可节省工时</h3>
+<p>原帖中的具体步骤对得上本次任务；部分引语和买家身份需要纠正。下表的日期、票数是网页／搜索缓存快照，不是实时数据；“未找到”不补猜。</p>
+<table>
+<thead>
+<tr>
+<th>用户、日期／帖级票数</th>
+<th>原话与抱怨步骤</th>
+<th>现用工具、付费及证明边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>海运报价从业者；<strong>2026-09-10／+1</strong></td>
+<td>“the booking tends to go to whoever answered first”；等代理及毛利审批拖长邮件到报价时间。评论又说可靠交付时间比纯速度更重要。<a href="https://www.reddit.com/r/freightforwarding/comments/1wcl4n3/how_long_does_an_ocean_quote_actually_take_your/">原帖</a></td>
+<td>有人用运价管理软件，但费率必须及时更新。支持审核流程和时效检查；不能证明软件消除时差等待，也未提付多少钱。原页本次直开失败，以检索缓存核对</td>
+</tr>
+<tr>
+<td>发帖人寻求货代自动化；精确日期／票数<strong>未找到</strong></td>
+<td>“from the stage of receiving emails to quoting to the customer”；想保留公司记录，不想逐条喂给聊天工具。<a href="https://www.reddit.com/r/freightforwarding/comments/1qf9l67/automating_my_pricing_flow/">原帖</a></td>
+<td>提到 n8n、Make；评论者自称做物流自动化，主帖作者随后愿介绍供应商，存在导流可能。支持流程需求，不能算独立购买证明</td>
+</tr>
+<tr>
+<td>小型远程物流公司员工，评论确认主要国际海空运；<strong>2024-03-20／+2</strong>，旧样本</td>
+<td>“would prefer a free option/DIY solution”；说公司日收 <strong>30–40 次</strong>询价，用 Excel 和 Outlook 签名模板，并愿为合适工具付少量月费。<a href="https://www.reddit.com/r/logistics/comments/1bjp80x/quoting_system_for_logistics_company/">原帖</a></td>
+<td>已有 CargoWise，但认为生成报价费事；明确拒绝附件，要求邮件正文。证明具体工作流与预算约束，不能把该公司频次当行业均值；付费交易未找到</td>
+</tr>
+<tr>
+<td>新入行货代；精确日期／票数本次<strong>未找到</strong></td>
+<td>“never ending loop of emails and copy pasting”；询价、等伙伴回复、比较再发客户不断重复。<a href="https://www.reddit.com/r/freightforwarding/comments/1smuiw6/half_my_day_is_just_quoting_and_im_starting_to/">原帖</a></td>
+<td>评论含产品推广。旧档案记为 <strong>2026-04-16／+7</strong>，本次未重新取得绝对日期，不按近半年新增样本使用</td>
+</tr>
+<tr>
+<td>货代从业者；<strong>2026-04-20／+7</strong>，半年窗口外</td>
+<td>查多个承运人表格里的航线与附加费耗时；“It consumes all our time.”<a href="https://www.reddit.com/r/freightforwarding/comments/1sr1ovp/carrier_forwarder_rates_hassle/">原帖</a></td>
+<td>评论有免费早期产品招募及自动化服务推广。支持查表负担，不能证明免费方案已令用户满意或有人购买</td>
+</tr>
+<tr>
+<td>自称资深货代、同时考虑开发产品；<strong>2026-05-14／+2</strong></td>
+<td>“Excel + eyeball + hope?”；担心把承运人总价直接抄给客户，漏掉适用费用。评论强调列清条件和报价有效期。<a href="https://www.reddit.com/r/freightforwarding/comments/1td9lrf/how_do_you_verify_carrier_quotes_dont_have_hidden/">原帖</a></td>
+<td>只是费用核对步骤的支持证据，带开发者调研动机；不把其损失金额当行业数据，也不单独提升付费分</td>
+</tr>
+</tbody>
+</table>
+<p><strong>原需求日报的三处修正：</strong>“花人力省一点运费”的帖子是<a href="https://www.reddit.com/r/freightforwarding/comments/1q0irvk/how_much_time_does_your_team_spend_on_quote/">货主采购侧</a>，不证明货代买软件；“20 min to a couple hours”和历史价那句在<a href="https://www.reddit.com/r/supplychain/comments/1smans8/how_are_smaller_3pl_teams_handling_quoting/">小 3PL 调研帖</a>可读正文中未找到，且正文提 DAT／Truckstop，偏公路经纪；<a href="https://www.reddit.com/r/logistics/comments/1szz5vp/how_do_freight_forwarders_actually_manage_rates/">数据分散帖</a>正文已删除、评论有近似表述和推广，只作低权重补充。</p>
+<h3 id="_7">同任务已有收费供给；独立付费与续费证据仍不够</h3>
+<p><strong>竞品存在是需求验证线索。</strong>当前障碍是尚未核到本切口的小客户持续付款，不能用整个物流软件市场的收入补齐。</p>
+<table>
+<thead>
+<tr>
+<th>对标／重合程度</th>
+<th>已核到的功能与公开价格（美元）</th>
+<th>能证明什么，不能证明什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Freitt：最贴近本次任务</strong></td>
+<td>转发询价、上传 Excel 买价、补问草稿、费用来源追溯、过期价拦截、人工确认；Starter <strong>$55</strong>、Growth <strong>$89／用户／月</strong>。原生 Gmail／Outlook 连接仍列待推出。<a href="https://freitt.com/how-it-works">流程</a>、<a href="https://freitt.com/pricing">价格</a></td>
+<td>同任务作为产品公开销售。真实付费客户数、收入、续费率、独立差评<strong>未找到</strong>；页面演示不作客户数据</td>
+</tr>
+<tr>
+<td><strong>Wisor：同流程模块，套件更广</strong></td>
+<td>官网覆盖邮件抽取、费率匹配、报价和异常审核；具体价格<strong>未找到</strong>，需演示。<a href="https://wisor.ai/solution/freight-email-automation/">邮件产品</a></td>
+<td><a href="https://wisor.ai/case-studies/">具名案例</a>及<a href="https://www.g2.com/products/wisor-ai-wisor-ai/reviews">G2 用户评价</a>支持实际使用；小公司为“仅邮件到报价”独立支付多少、付费客户数、模块续费率<strong>未找到</strong></td>
+</tr>
+<tr>
+<td><strong>Quotiss：更宽的商用套件</strong></td>
+<td>询价整理、费率、报价、客户管理和分析；<strong>$125／用户／月，至少 2 人</strong>，不能按单席价格比较最低公司账单。<a href="https://quotiss.com/">官网</a>、<a href="https://quotiss.com/pricing/">定价</a></td>
+<td>提供上位替代方案和商业报价；其套件价格不计作本切口独立付费证明</td>
+</tr>
+<tr>
+<td><strong>Lead Quote Track：部分重合</strong></td>
+<td>邮件发起询价、读取代理回价、比较再形成报价。官网 FAQ 写单用户月付发布价 <strong>$35</strong>，有效至 <strong>2026-12-31</strong>；标准月价 <strong>$49</strong>，页面也有年付折算显示，不能混用。<a href="https://www.leadquotetrack.com/">官网／FAQ</a></td>
+<td>支持轻量工具供给；仍有代理比价等不同任务。付费数量、收入、续费<strong>未找到</strong>，不借这些相邻功能给本切口加分</td>
+</tr>
+</tbody>
+</table>
+<p>经营核验：Wisor 的投资方确认其 <strong>$8m 种子轮</strong>，这是融资，不是收入或当前累计融资。<a href="https://team8.vc/wisor-ai-digitally-rewiring-the-freight-industry/">Team8</a> 其余上述直接／部分重合产品的可核融资、模块营收与利润<strong>未找到</strong>。竞品自然访问量及搜索渠道占比<strong>未找到</strong>，<a href="https://www.similarweb.com/website/freitt.com/">Freitt</a>与<a href="https://www.similarweb.com/website/wisor.ai/">Wisor</a>的 Similarweb 页面本次不可读，不能断言它们靠 SEO 成交。</p>
+<h3 id="_8">可以做窄方案，但“有追溯＋人工审核”已经不是独有卖点</h3>
+<p><a href="https://freitt.com/how-it-works">Freitt</a>已明确展示费用追溯、有效期、人工审核，因此旧报告提出的这些功能不能再写成未被满足的缺口。真正待验证的是：<strong>目标公司的实际邮件／费率格式，现有产品是否处理不好，而且客户愿意为处理好它单独付钱。</strong></p>
+<p><a href="https://www.g2.com/products/wisor-ai-wisor-ai/reviews">Wisor 的 G2 评价</a>中，<strong>2025-04-22</strong>有用户称复杂费率更新可能等数日；<strong>2026-02-25</strong>有用户肯定 Outlook 提取及报价省时。前者给出导入与自助修订的测试方向，后者证明已有产品有用；都不能证明现在仍存在同样缺陷。旧报告关于 <strong>2025-08-27</strong>“承诺功能交付慢、上传出错”的具体说法，本次在可读页面中<strong>未找到</strong>，不沿用。</p>
+<p>Freitt 的<a href="https://freitt.com/tools/freight-quote-roi-calculator">计算器说明</a>明确说尚无可预填的已测客户省时数字；这支持谨慎使用效果证据，不能推出它没有付费客户。</p>
+<p><strong>可试的缝隙（假设，尚未成立）：</strong>用一个客户反复出现的代理回价格式，做到费用逐项映射、未知项显式留空、客户自己的报价正文直接可用。用同一批真实样本与 Freitt 对比；若现有工具已满足，当前方案没有必要重做。</p>
+<p>AI 适合抽取杂乱邮件、识别缺字段、生成补问与解释；算费、汇率、有效期和加价规则用确定性计算，发送由人确认。通用聊天工具无法自然替代持续收件、版本记录与审批，但如果每次都要人工重做，产品价值就不成立。<a href="https://www.reddit.com/r/freightforwarding/comments/1qf9l67/automating_my_pricing_flow/">从业者关于人工复核的讨论</a></p>
+<h3 id="seo">SEO：有对口页面可竞争，尚未证明有足够的搜索买家</h3>
+<p><strong>关键词与实际搜索结果要分开看。</strong>主任务候选词存在，但网页结果混入货主找运费、承运人服务、公路报价和通用解析；不能把行业同词当作同一个软件需求。<a href="https://wisor.ai/solution/freight-email-automation/">软件意图示例</a>、<a href="https://haulier.ai/blog/freight-quote-automation">公路履约示例</a></p>
+<table>
+<thead>
+<tr>
+<th>同一任务下的表达</th>
+<th>已提供国家结果中的代表页面／意图</th>
+<th>对判断的影响</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>freight forwarder quoting software</code></td>
+<td>US：Quotiss、Quotable、Freightify；UK／AU 也出现专业软件。CA 混入货主找价平台。<a href="https://quotiss.com/">Quotiss</a>、<a href="https://getquotable.ai/industries/freight-forwarders">Quotable 行业页</a></td>
+<td>软件意图存在；排名页可能承诺完整商用系统，不能只用解析表单承接</td>
+</tr>
+<tr>
+<td><code>freight email quote workflow</code></td>
+<td>US 包含 Wisor 与通用工作流；UK／CA／AU 有 FRAI。<a href="https://wisor.ai/solution/freight-email-automation/">Wisor</a>、<a href="https://www.frai.global/blog/email-to-quote-automation-freight-forwarders">FRAI</a></td>
+<td>与本任务更接近，但未取得可靠正月搜；不能从排名推出成交量</td>
+</tr>
+<tr>
+<td><code>freight RFQ email automation</code></td>
+<td>US／UK／AU 见 FRAI、Zavin；CA 的结果更杂。<a href="https://www.frai.global/">FRAI</a>、<a href="https://zavin.ai/platform/email-automation">Zavin</a></td>
+<td>既有专业供给，也有较年轻站点；独立客户、自然流量和新站获客成本未找到</td>
+</tr>
+<tr>
+<td><code>email to quote for freight forwarders</code></td>
+<td>软件与货代运输服务混杂。<a href="https://wisor.ai/solution/freight-email-automation/">直接软件</a></td>
+<td>产品页必须明说“使用你自己的费率生成草稿”；不承诺向货主提供运输报价</td>
+</tr>
+</tbody>
+</table>
+<p><strong>影响结论的数据限制：</strong>已提供的地区 SERP 一共 <strong>88 份</strong>，均不足前十：<strong>86 份为 9 条、2 份为 8 条</strong>。其中 AU 的 <code>freight quote generation from rate sheets</code> 返回政府利率／统计等离题页面，整份排除竞争判断；按本任务保留的有效地区样本仅为 <strong>US／UK／CA 各 11 份，AU 10 份</strong>。以上为附件原始 <code>serp.json</code> 复算，<a href="https://api.pxany.com/v1/serp?q=freight+email+quote+workflow&amp;gl=us&amp;hl=en&amp;num=10">供应商 SERP 接口</a>可作复查入口，搜索结果会变化。</p>
+<p><strong>域名年龄只留观察：</strong>原数据记录 FRAI 注册于 <strong>2025-10-30</strong>、Zavin 于 <strong>2026-07-08</strong>，两者公开页确实覆盖邮件到报价；本次 RDAP 重查不可读，只沿用供应商档案，不能视为已独立复核。<a href="https://www.frai.global/blog/email-to-quote-automation-freight-forwarders">FRAI 页面</a>、<a href="https://zavin.ai/platform/email-automation">Zavin 页面</a>、<a href="https://rdap.org/domain/frai.global">FRAI RDAP</a>、<a href="https://rdap.org/domain/zavin.ai">Zavin RDAP</a> 另一个原入榜站 Aeralis 官网已公告 <strong>2026-10-02 关闭</strong>，原产品是通用 Gmail 草稿插件；Haulier 是英国集装箱公路运输服务，两者均不贡献本任务的竞争评分。<a href="https://aeralis.ai/blog/ai-email-freight-broker-quotes">关闭公告</a>、<a href="https://haulier.ai/blog/freight-quote-automation">Haulier 自述</a></p>
+<p>因此，“有年轻域名出现”只能说明值得继续查。<strong>当前没有可靠依据给这个切口承诺 SEO 优先级。</strong>也不能反向断言搜索需求为零：供应商零值口径有疑问，日本等市场大量词未返回，非英语国家前十尚缺。</p>
+<h3 id="_9">最小验证与停止条件</h3>
+<p>以下全部是<strong>本研究设定的实验参数，不是行业均值、已发生交易或营收预测</strong>；报价参考<a href="https://freitt.com/pricing">同任务现有标价</a>，验证对象为前述单一流程。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>动作及通过线</th>
+<th>停止／收缩条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>样本与可交付性</td>
+<td>两周接触 <strong>15 家</strong>匹配公司，取得 <strong>3 家</strong>授权数据，各回放 <strong>30 条</strong>历史询价；同时与现用流程及 Freitt 比较。净人工处理时间中位数降低 <strong>50%</strong>，测试集中的过期价／缺费陷阱全部被拦截</td>
+<td>取不到授权样本，或客户主要卡在等待代理而非整理核对，就停止当前输入范围；现有工具同样满足且无可付费增量，也停止当前方案</td>
+</tr>
+<tr>
+<td><strong>首付</strong></td>
+<td>独立软件试点价 <strong>$149／公司／月，最多 3 人</strong>，至少 <strong>2 家真实付款</strong>；接入劳务若收费另列，不能当软件首付</td>
+<td>认可、免费试用、订金意向均不算；无人为该流程单独付款，停止开发完整产品</td>
+</tr>
+<tr>
+<td><strong>复用</strong></td>
+<td>首月每家在至少 <strong>3 个不同工作周</strong>使用，各处理至少 <strong>20 条真实询价</strong>；扣除查错／补录后仍省时</td>
+<td>只演示时用、靠研究者代操作或查错抵消收益，收缩格式支持或停止；套餐内再用不算第二次付款</td>
+</tr>
+<tr>
+<td><strong>续费</strong></td>
+<td>到第二个计费周期，试点公司至少 <strong>2 家主动续费且继续使用</strong>；记录拒绝续费原因</td>
+<td>首月内不能宣布已续费；若只肯按次买，需另测按次价格与第二单再付，不能拿复用代替</td>
+</tr>
+<tr>
+<td>SEO 渠道单独验证</td>
+<td>仅做工作流、费率导入样例和定价演示页；记录非品牌自然搜索→匹配公司演示→首付。<strong>90 天</strong>目标为 <strong>3 个合格自然搜索线索、1 个可归因首付</strong></td>
+<td>无合格线索则维持 SEO 非优先，不扩大内容；有收录无买家不算通过。该停止线是预算规则，不证明整个赛道无搜索需求</td>
+</tr>
+</tbody>
+</table>
+<p><strong>价值／维护敏感性（假设→推算）：</strong>若月处理 <strong>100 次</strong>、每次净省 <strong>6 分钟</strong>、人工价值 <strong>$30／小时</strong>，时间价值约 <strong>$300／月</strong>；只有 <strong>20 次</strong>则约 <strong>$60／月</strong>，不足覆盖试点月费。再假设基础直接成本 <strong>$25／公司／月</strong>，另需 <strong>2 小时</strong>维护、同按 <strong>$30／小时</strong>计，则月贡献约 <strong>$64＝149−25−60</strong>，尚未扣销售和开发。价格、工时、成本均待实单验证，不能把模型当利润证明；可用<a href="https://freitt.com/tools/freight-quote-roi-calculator">竞品计算器</a>核对参数思路，勿照抄其示例为行业数据。</p>
+<h2 id="_10">附录：评分、审计与词表</h2>
+<h3 id="_11">五项复核与综合评分</h3>
+<p>按指定筛选标准，每项 <strong>1–5 分</strong>，等权；原日报维度与新标准不同，不能机械照搬。下列分数均为研究判断，证据入口随行列出。</p>
+<table>
+<thead>
+<tr>
+<th>新标准</th>
+<th>专员原分</th>
+<th style="text-align: right;">核实后分</th>
+<th>关键依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>①需求真实</td>
+<td>4</td>
+<td style="text-align: right;"><strong>4</strong></td>
+<td>连续流程原声成立，样本与推广问题降权。<a href="https://www.reddit.com/r/freightforwarding/comments/1wcl4n3/how_long_does_an_ocean_quote_actually_take_your/">原帖</a></td>
+</tr>
+<tr>
+<td>②付费意愿／当前切口 PMF</td>
+<td>3</td>
+<td style="text-align: right;"><strong>2</strong></td>
+<td>同任务标价成立；独立付费客户和续费未找到，未过 PMF 证据门槛。这是证据不足，不是断言无人付费。<a href="https://freitt.com/pricing">Freitt</a></td>
+</tr>
+<tr>
+<td>③好服务</td>
+<td><strong>未给</strong>；原③是“AI 友好4”</td>
+<td style="text-align: right;"><strong>2</strong></td>
+<td>用户是专业报价员，错误价格伤害客户关系，不能因 B 端就认定容易服务。<a href="https://www.reddit.com/r/freightforwarding/comments/1qf9l67/automating_my_pricing_flow/">用户讨论</a></td>
+</tr>
+<tr>
+<td>④小团队做得动</td>
+<td>4（原⑤）</td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td>单格式、单航线草稿可做；费率更新与个性化仍有持续负担。<a href="https://www.g2.com/products/wisor-ai-wisor-ai/reviews">评价</a></td>
+</tr>
+<tr>
+<td>⑤形态简单</td>
+<td><strong>未给</strong>；原④是“B 端5”</td>
+<td style="text-align: right;"><strong>3</strong></td>
+<td>前台能简单，后台需处理缺项、版本、有效期与审批。<a href="https://freitt.com/how-it-works">对标流程</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>综合分：56／100＝(4＋2＋2＋3＋3)÷25×100。</strong>②低于推荐线，不建议直接立项；仅保留低成本付费验证。原深挖 <strong>66 分</strong>采用另一套六维权重且夹带相邻市场证据，本次不沿用，也不把两者差值解释成市场下滑。<strong>此总分不代表 SEO 获客可行性</strong>；AI 赋能另在正文判断，不重复加分。原表的 B 端身份只用于确定买家。</p>
+<h3 id="_12">搜索量与国家审计</h3>
+<p>数据来自本批已提供的 PXAny 各国 Google 关键词查询，时间戳 <strong>2026-10-24 19:28:01</strong>，未注明时区；地区／语言依原配置。<strong>610 条是市场×词记录，不是独立需求数；同义词及国家数值不相加估市场。</strong><a href="https://api.pxany.com/v1/keyword-volumes">供应商接口</a></p>
+<table>
+<thead>
+<tr>
+<th>市场／语言</th>
+<th style="text-align: right;">全部查询</th>
+<th style="text-align: right;">完整任务候选</th>
+<th>候选：正数／原标0待核／未返回</th>
+<th style="text-align: right;">本国 Google 有效样本份数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>US／英语</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">17</td>
+<td>0／17／0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td>UK／英语</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">17</td>
+<td>0／17／0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td>CA／英语</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">17</td>
+<td>0／17／0</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr>
+<td>AU／英语</td>
+<td style="text-align: right;">62</td>
+<td style="text-align: right;">17</td>
+<td>0／17／0</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr>
+<td>DE／德语</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">14</td>
+<td>0／14／0</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>FR／法语</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">16</td>
+<td>0／16／0</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>ES／西语</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">14</td>
+<td>0／14／0</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>IT／意语</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">15</td>
+<td>0／15／0</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>NL／荷语</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">15</td>
+<td>0／14／1</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>JP／日语</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">15</td>
+<td>0／1／14</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+<tr>
+<td>KR／韩语</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: right;">15</td>
+<td>0／14／1</td>
+<td style="text-align: right;">未取得</td>
+</tr>
+</tbody>
+</table>
+<p>本表由附件最终判定表复算；可复查<a href="https://www.google.com/search?q=freight+email+quote+workflow&amp;gl=us&amp;hl=en&amp;num=10">美国工作流词</a>、<a href="https://www.google.com/search?q=E-Mail+zu+Frachtangebot&amp;gl=de&amp;hl=de&amp;num=10">德国邮件报价词</a>，这些链接不承诺保留采集时排名。</p>
+<p>四态审计：<strong>返回正数 7 条</strong>，全部是相邻运价管理，排除主判定；<strong>原标“供应商返回0”541 条</strong>；<strong>未返回 62 条</strong>；原清单内<strong>未查询 0 条</strong>。但采集代码将 <code>avgMonthlySearches=null</code> 也写为 0，原始响应未保存，故不能把这 541 条都认证为供应商显式返回零。原值不改，逐条加“不确定零值来源”标记；本次抽样重查 DNS 失败，已留日志。<strong>不写“全部无搜索”，也不把未返回视为≤200。</strong><a href="https://api.pxany.com/v1/keyword-volumes">供应商入口</a></p>
+<p>全部词逐条标记：完整任务候选 <strong>172 条</strong>、步骤词 <strong>230 条</strong>、相邻任务 <strong>180 条</strong>、当前不承接 <strong>28 条</strong>，均按市场×词计；只有完整任务候选进入主任务 SEO 判断。步骤词有导入、解析、模板等不同输入／输出，只留审计。全部 <strong>610 行</strong>含原值、四态、分类原因、是否计入主判定，见附件 <code>evidence/keyword-audit.csv</code>；最终口径见 <code>final-judgments.json</code>，<code>serp.json</code>／<code>serp.md</code>同步读取。</p>
+<h3 id="_13">核心表达与排除记录</h3>
+<p>最终英文核心保留完整任务／报价系统表达，<strong>11 个词</strong>；原核心里的独立运价管理、邮件解析、费率导入、代理比价、跟进统计移出主核心。原生 Outlook／Gmail 插件词列为当前不承接，不能用转发邮箱假装插件。</p>
+<table>
+<thead>
+<tr>
+<th>国家</th>
+<th>本地核心候选例词</th>
+<th>搜索量状态／实际检索边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DE</td>
+<td><code>Speditionsangebote automatisieren</code></td>
+<td>原标0待核；补搜有面向货代的自动化页面。<a href="https://logispot.io/de/">本地用语参照</a></td>
+</tr>
+<tr>
+<td>FR</td>
+<td><code>créer une cotation depuis un mail</code></td>
+<td>原标0待核；补搜有同任务法语页面。<a href="https://logispot.io/fr/">参照</a></td>
+</tr>
+<tr>
+<td>ES</td>
+<td><code>software de cotizaciones para transitarios</code></td>
+<td>原标0待核；补搜有 transitarios 软件页。<a href="https://www.freightools.com/es">参照</a></td>
+</tr>
+<tr>
+<td>IT</td>
+<td><code>creare preventivi spedizioni da email</code></td>
+<td>原标0待核；补搜有软件与运输服务混合。<a href="https://www.freightools.com/it">参照</a></td>
+</tr>
+<tr>
+<td>NL</td>
+<td><code>vrachtoffertes maken vanuit e-mail</code></td>
+<td>未返回；局部词能找到报价模块，完整邮箱流程覆盖待核。<a href="https://www.logipulse.com/nl/features/">参照</a></td>
+</tr>
+<tr>
+<td>JP</td>
+<td><code>メールから見積作成 フォワーダー</code></td>
+<td>未返回；返回通用报价与货代系统，不证明专门邮件流水线有量。<a href="https://www.prolayer.com/accel/">参照</a></td>
+</tr>
+<tr>
+<td>KR</td>
+<td><code>이메일로 포워딩 견적 작성</code></td>
+<td>未返回；返回招聘／物流报价等，未找到可直接比较的独立邮件报价 SaaS。<a href="https://www.samsungsds.com/kr/digital-forwarding-platform/cello-square.html">意图反例</a></td>
+</tr>
+</tbody>
+</table>
+<p>上述本地词均已补实际一般网页搜索，<strong>不能冒充指定国家 Google 前十</strong>。原 <code>core.txt</code> 只有英语，导致非英语核心被零值／缺失门槛跳过；最终核心已补本地表达并记录待补状态。<code>E-Mail zu Frachtangebot</code>、<code>cotizaciones de fletes desde correos</code> 的补搜主要偏运输／邮政服务，已剔出主任务候选。完整各语种词表随附件，未硬凑新词数量。</p>
+<p><strong>相邻机会仅列，不计搜索量、付费或竞争分：</strong>独立运价管理／报价后催单与输赢统计／货主向多家货代采购比价／独立邮件解析 API／欧洲公路运价情报／美国公路经纪报价／运输和报关履约。原报告的 Cargobloom 官方服务描述为欧洲道路货运情报与 API，不作为本任务付费对标。<a href="https://cargobloom.io/enterprise">企业页</a>、<a href="https://cargobloom.io/terms">官方服务描述</a></p>
+<h3 id="_14">方法、来源与交付限制</h3>
+<ul>
+<li>先读新版 <code>sop-v3.md</code>、<code>sop-criteria.md</code>、<code>reddit-method.md</code>，沿用已存在需求日报入口；未另跑其他赛道。原报告与原词表只作待复核材料。</li>
+<li>Reddit 窗口为 <strong>2026-04-24—2026-10-24</strong>。优先 r/freightforwarding、r/CargoWise；通过<a href="https://arctic-shift.photon-reddit.com/api/posts/search?subreddit=freightforwarding&amp;after=2026-04-24&amp;before=2026-10-25&amp;limit=100&amp;sort=asc">Arctic Shift 接口</a>请求，首试和稍后重试均 DNS 失败；相邻请求间隔至少 <strong>3 秒</strong>，未换 IP 或绕限制。网页工具也不可访问，退回 <code>site:reddit.com</code> 和逐页打开。<strong>未完成半年全量、翻页及评论 API 抓取</strong>。</li>
+<li>正文列出的流程／步骤支持线程共 <strong>6 条</strong>，其中本次核到明确近半年日期的 <strong>2 条</strong>；不是独立付费买家样本。按线程编码、每痛点每线程最多一次；低权重步骤帖另标，不因重复评论多计。排序及痛点计数见 <code>evidence/reddit-sample.json</code>、<code>reddit-ranked.csv</code>、<code>pain-counts.json</code>。评论总数<strong>未找到</strong>，不伪称已按完整评论数排序，也不推行业发生率。</li>
+<li>SERP 的地区参数沿原供应商结果；本次原页访问核实产品范围与变动，未登录试用竞品。对年龄按精确注册日复算，不用四舍五入年数判阈值；原始“年轻”标签只在原档案保留，不作最终结论。</li>
+<li>证据包保留原 SERP、最终判定、完整词表、HTTP／DNS 错误、来源卡、计算及计时；不包含 API 密钥或会话日志。网页价格和内容以本次可读版本为准，搜索缓存与当前页冲突时优先当前可读官网。</li>
+<li>公开报告网页：<strong>未发布</strong>。本地 GitHub API 连通性检查失败；已准备本地静态阅读页，未生成虚假的公开地址。各核心结论仍附可打开的原始公开来源。</li>
+</ul>
+<!-- TIMING -->
+
+<p><strong>用时（北京时间，本机日志）：</strong>本批扩词 8.6 分钟；已提供 SERP 采集 41.5 分钟；本轮核验、报告及打包前检查 19.2 分钟；批次合计 69.4 分钟。起点为 2026-10-24 18:37:52，报告阶段起点 19:28:01，本次记录终点 19:47:13。此前扩词／SERP 为复用材料，不计作本轮新查询。计时来源随附件 <code>timing.txt</code>、<code>evidence/timing-audit.json</code>。</p></section><section id="sop-criteria"><h2 class="sec">sop-criteria.md</h2><p>【对齐需求发掘专员的筛选标准——这是本次调查的核心依据】
+其打分 5 项（各 1–5）：①需求真实 ②付费意愿 ③好服务（用户非专业、要求不高；不限 B 端，C 端也可以，B 端小老板只是加分；专业挑剔或出错要担大责任的扣分）④小团队做得动 ⑤形态简单（表单类）；①或②&lt;3 不推荐。原则：AI 时代赋能（AI 越强产品越好，用户不会因有 AI 就不用）；门槛：对标产品已验证 PMF——且 PMF 必须对得上<strong>当前切口</strong>，大品类有人付费不能直接证明这个小功能有人另付钱。
+初步报告须先钉死：谁、输入、输出、单一用户任务；相邻机会拆开，不混进同一条五项打分。</p>
+<p>你的任务是逐项核实/推翻它给的分数和证据，而不是另起一套标准：
+- 关卡1 核①：逐页打开原帖核对原话和日期（近半年优先），给出你核实后的分数。
+- 关卡2 核②+PMF：官网核实竞品价格、客户数、融资、流量；"有成熟对标产品在收钱"是通过信号，不是否决理由——但必须是当前切口的对标，不是相邻大品类。
+- 关卡3 核③④⑤+切入可行性：不要因为"已有竞品/低价竞品"就止损。只在以下情况止损：免费方案已足够好且用户满意、或头部产品价格已低到小团队无利可图、或差评里找不到任何可切入缺口、或研发/合规负担超出小团队。要明确写出小团队可切的缝隙及证据。
+- 关卡4 市场体量，关卡5 核"AI 时代赋能"是否成立。
+报告开头列一张表：5 项"专员原分 / 核实后分 / 关键证据"；首屏另给三维决策（需求／独立收费／SEO 优先级），总分可放附录。</p></section><section id="sop-v3"><h2 class="sec">sop-v3.md</h2><p>【入口铁律】新赛道必须先有需求发掘专员的初步报告与五项打分，再进入本 SOP 深挖。用户口头点题也先转需求发掘专员，禁止未经初步直接扩词/SERP/写报告。</p>
+<p>你是赛道深度调查员。需求来源报告：<strong>SRC</strong>。中文，精炼。每个数据附来源链接，查不到写"未找到"，严禁编造。
+核心原则：有竞品不是否决理由。竞品赚钱多说明市场被验证，做老二也可以。我们主打 SEO。
+团队在中国做出海：只做能远程成交的软件/SaaS 获客，不做必须本地履约的服务需求。</p>
+<p>【先钉死研究对象】报告开头必须固定：谁、输入是什么、输出是什么、本次只判断哪一个用户任务。
+- 相邻机会（相近但输入/输出不同）只列表，不贡献搜索量、付费证明或竞争评分。
+- 例：播客转文字 ≠ 已有文字稿→发布素材 ≠ 播客内容搜索，必须拆开。
+- 第一行一句话定位仍要写："这个产品帮助【什么人】，在【什么场景】下，解决【什么问题】。"标题用直白话，术语首次出现要解释。</p>
+<p>【第一步：核实赛道】确认需求真假（专员数据、原帖、竞品价格/客户数、Reddit Arctic Shift）。只有需求假或无人付费才停。用户原声要写清：什么用户、原话、抱怨的是哪一步、是否提过现用工具和付费。</p>
+<p>【第二步：调查关键词】
+1. <strong>按用户任务覆盖，不硬凑数量</strong>：先围绕已明确的用户任务找核心词、同义表达、具体场景词；确认相关后再扩市场。初筛可从几十个高相关词开始，不设「每种语言约 300」硬指标。
+2. 每个词都要能回答：搜这个词的人进入我们计划做的页面，能不能直接得到他想要的结果？不能 → 移到相邻机会或排除记录，不能因词里有同类行业词就硬套。
+3. 市场（只保留主要发达市场）：US、UK、CA、AU、DE、FR、ES、IT、NL、JP、KR。各国用当地语言查 Google 月搜索量。英语 en.txt 共用四英语市场；de/fr/es/it/nl/ja/ko 各自本地说法扩词。
+4. <strong>SERP 规则（2026-10-24 改）</strong>：
+   - <strong>核心需求词</strong>：无论月搜高低，都查实际搜索结果（确认意图、直接竞品、预期功能）。低量只影响 SEO 优先级，不能成为「不理解这个需求」的理由。
+   - <strong>外围扩展词</strong>：再用「该市场月搜 &gt; 200」控制调查成本；≤200 只记量。
+5. <strong>出海筛选（标配）</strong>：即使月搜&gt;200，若该词是「只有本地成交才能变现」的当地服务需求，也直接跳过 SERP，只记量并标注「本地服务跳过」。（保留找软件/系统/SaaS 的词。）
+6. <strong>搜索量记录</strong>：分清「返回正数 / 供应商返回 0 / 未返回 / 未查询」。没有查到数值，不能写成「未找到≤200」。</p>
+<p>【第三步：研究竞争格局】
+- <strong>按用户任务分组</strong>，再比较不同国家表现。同一任务的多种搜索表达合成一个需求组，不要「每个市场×关键词各写一套赛道结论」。
+- 用该国 Google 看前十；域名注册年龄保留为证据：<strong>近1年或近18个月≥2个、近18个月1个</strong> 仅标为观察线索（「样本中有年轻域名入榜，值得继续查」），<strong>不得直接升级为「新手友好／容易做」</strong>。还要看排名页满足什么需求、功能特点、有无可比小站、我们能否交付。DR 仅参考。样本不足完整前十时，必须写明样本条数，不得下满额结论。
+- 意图是否对口；该词头部/中小玩家与切入点。
+- 正文、serp.json、公开页必须读同一份<strong>最终判定表</strong>；旧标签可留在原始数据，但不得被后续汇总当最终结论。</p>
+<p>【第四步：投入产出与结论】
+- <strong>首屏三维决策</strong>（先于总分）：①有没有相关需求？②当前切口能否独立收费（待验证／已证明）？③适不适合优先靠 SEO 做站？
+- 总分满分 100 可留作内部筛选记录，放附录；五项评分里若未直接评 SEO 获客可行性，不要用总分冒充 SEO 优先级。
+- 验证指标必须分开：<strong>首付、复用、续费</strong>。月订阅看首付+使用、到续订周期再看续费；按次收费才看「第二单是否再买」。不要把套餐内再用当成再付。
+- 写清最小验证动作与停止条件；记录用时。</p>
+<p>【报告结构三层】
+1. 一分钟看懂：研究哪个需求、当前建议、最关键支持/反对理由、哪个未知会改决定、下一步验证。
+2. 判断依据：场景与问题 → 现有解法与痛点 → 需求证据与反证 → 能承接的词与直接竞品 → 最小验证与停止条件。每节先结论再少量证据；每条重要证据说明支持什么、不能证明什么。
+3. 可展开证据与方法：完整国家/词表、剔除词及原因、旧评分修正、域名核验、DNS/重试/计时、SOP 与原始文件。影响决策的限制（如某国数据缺失）须留在正文，细节日志可附录。</p>
+<p>【验收】看完首屏应能说清：谁要什么、我们交付什么、有什么证据、为什么值得或不值得继续、下一步验证什么。说不清就继续改；关键词数量和报告长度不算完成标准。</p>
+<p>serp.py：准备 kw 目录（en.txt/de.txt/…），然后
+  python3 /workspace/research/serp.py <kw目录> &lt;输出目录&gt;
+核心词清单可单独标记，脚本侧逐步支持「核心词无视 200 门槛」；在脚本未改完前，人工保证核心词必做 SERP。</p>
+<p>【交付】报告里只写 https 外链；不要写 /workspace 本机路径。证据文件打进同名 zip，附件发 zip，并附公开网页链接。每个核心结论要有可打开的证据入口。</p></section><section id="files"><h2 class="sec">证据文件（原始数据）</h2><ul><li><a href="kw/adjacent.txt">kw/adjacent.txt</a> (4 KB)</li><li><a href="kw/core.txt">kw/core.txt</a> (0 KB)</li><li><a href="kw/de.txt">kw/de.txt</a> (1 KB)</li><li><a href="kw/en.txt">kw/en.txt</a> (2 KB)</li><li><a href="kw/es.txt">kw/es.txt</a> (2 KB)</li><li><a href="kw/fr.txt">kw/fr.txt</a> (1 KB)</li><li><a href="kw/it.txt">kw/it.txt</a> (1 KB)</li><li><a href="kw/ja.txt">kw/ja.txt</a> (1 KB)</li><li><a href="kw/ko.txt">kw/ko.txt</a> (1 KB)</li><li><a href="kw/nl.txt">kw/nl.txt</a> (1 KB)</li><li><a href="report.md">report.md</a> (25 KB)</li><li><a href="serp.json">serp.json</a> (1307 KB)</li><li><a href="serp.md">serp.md</a> (241 KB)</li><li><a href="sop-criteria.md">sop-criteria.md</a> (1 KB)</li><li><a href="sop-v3.md">sop-v3.md</a> (5 KB)</li><li><a href="timing.txt">timing.txt</a> (0 KB)</li><li><a href="小货代询价邮件报价流水线-56分.md">小货代询价邮件报价流水线-56分.md</a> (25 KB)</li></ul></section></div></body></html>
